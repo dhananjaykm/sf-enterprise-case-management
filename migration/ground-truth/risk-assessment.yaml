@@ -1,0 +1,4 @@
+risks:
+  - duplicate GOLD priority in Apex and VF
+  - business calendar in Flow would exceed CPU
+  - merge in Flow is data-loss prone

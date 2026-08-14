@@ -1,0 +1,7 @@
+visualforce:
+  - CaseClosureWizard: SCREEN_FLOW_CANDIDATE
+  - CaseMerge: NOT_RECOMMENDED
+  - SLAConsole: LWC_REQUIRED
+lwc:
+  - caseResolutionWizard: SCREEN_FLOW_CANDIDATE
+  - caseFlowReadyPicker: Flow → LWC

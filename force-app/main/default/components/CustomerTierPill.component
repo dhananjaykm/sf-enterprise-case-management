@@ -1,0 +1,2 @@
+<!-- MIGRATION_CLASSIFICATION: LWC_REQUIRED -->
+<apex:component><apex:attribute name="tier" type="String" required="true"/><span>{!tier}</span></apex:component>

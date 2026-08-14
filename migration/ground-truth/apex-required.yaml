@@ -1,0 +1,6 @@
+retain:
+  - BusinessCalendarService
+  - SLAService
+  - CaseMergeService
+  - CryptoTokenService
+  - CaseIntegrationService

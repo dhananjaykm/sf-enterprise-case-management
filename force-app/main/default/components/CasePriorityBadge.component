@@ -1,0 +1,2 @@
+<!-- MIGRATION_CLASSIFICATION: LWC_REQUIRED -->
+<apex:component><apex:attribute name="priority" type="String" required="true"/><span>{!priority}</span></apex:component>

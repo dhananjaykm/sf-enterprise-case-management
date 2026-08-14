@@ -1,0 +1,45 @@
+version: 1
+org: sf-enterprise-case-management
+automation:
+  - id: CASE-001
+    source_artifact: CaseFieldDerivationService.cls
+    conversion: { classification: A, confidence: high }
+    target: { flow_type: record_triggered, save_type: before }
+  - id: CASE-002
+    source_artifact: CaseRoutingService.cls
+    conversion: { classification: A, confidence: high }
+  - id: CASE-003
+    source_artifact: SimpleSLAService.cls
+    conversion: { classification: A, confidence: high }
+  - id: CASE-004
+    source_artifact: SLAService.cls
+    conversion: { classification: E, confidence: high }
+    retain_apex: [BusinessCalendarService]
+  - id: CASE-005
+    source_artifact: EscalationService.cls
+    conversion: { classification: D, confidence: medium }
+    target: { flow_type: record_triggered, async: scheduled_path }
+  - id: CASE-006
+    source_artifact: CaseTaskService.cls
+    conversion: { classification: A, confidence: high }
+  - id: CASE-007
+    source_artifact: AutoCloseScheduler.cls
+    conversion: { classification: A, confidence: high }
+    target: { flow_type: scheduled_triggered }
+  - id: CASE-008
+    source_artifact: CaseMergeService.cls
+    conversion: { classification: G, confidence: high }
+  - id: CASE-009
+    source_artifact: CryptoTokenService.cls
+    conversion: { classification: G, confidence: high }
+  - id: CASE-010
+    source_artifact: CalculateSLAInvocable.cls
+    conversion: { classification: B, confidence: high }
+  - id: CASE-011
+    source_artifact: Case_Escalated__e
+    conversion: { classification: A, confidence: medium }
+    target: { flow_type: platform_event_triggered }
+  - id: CASE-012
+    source_artifact: CaseFutureActions.cls
+    conversion: { classification: G, confidence: high }
+    notes: SOQL in loop — do not migrate as-is; rewrite or keep Apex.
